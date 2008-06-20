@@ -30,12 +30,16 @@ else {
 
 print "done\n\n";
 
+$stdin = fopen("php://stdin", "r");
+
 print "Let's create a new user\n";
 print "Please enter the administrator's email: ";
-$email = trim(fgets(STDIN));
+$email = trim(fgets($stdin));
 
 print "Administrator's password: ";
-$password = trim(fgets(STDIN));
+$password = trim(fgets($stdin));
 
 $user->newUser($email, $password, 1);
+
+fclose($stdin);
 ?>
