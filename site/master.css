@@ -1,0 +1,15 @@
+body {
+	text-align: center;
+	font-family: times, "Times new roman", serif;
+	margin: 3em;
+}
+h1 {
+	font-size: 5em;
+	font-family: Helvetica, Arial, sans-serif;
+}
+p {
+	font-size: 1.5em;
+}
+#who {
+	color: purple;
+}

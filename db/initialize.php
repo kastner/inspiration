@@ -24,7 +24,7 @@ if ($first) {
 }
 else {
 	foreach($quotes as $q) {
-		$quote->newQuote($q["who"], $q["quote"]);
+		$quote->newQuote($q["who"], $q["quote"], 1);
 	}	
 }
 
@@ -38,5 +38,4 @@ print "Administrator's password: ";
 $password = trim(fgets(STDIN));
 
 $user->newUser($email, $password, 1);
-
 ?>
