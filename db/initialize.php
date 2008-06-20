@@ -9,6 +9,10 @@ $quote = new Quote;
 $user->migrate();
 $quote->migrate();
 
+if(isset($_SERVER["SERVER_NAME"])) {
+	die("This script must be run from the command line.");
+}
+
 require("../db/bootstrap.php");
 
 print "Initializing the quotes database...";
