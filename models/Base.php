@@ -7,9 +7,9 @@ class Base {
 	protected $table;
 	
 	public function __construct() {
-		$dbh = new PDO('sqlite:../db/inspire.sqlite3', '', '', array(
-		    PDO::ATTR_PERSISTENT => true,
-				PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
+		$this->dbh = new PDO('sqlite:../db/inspire.sqlite3', '', '', array(
+			PDO::ATTR_PERSISTENT => true,
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
 		));
 	}
 	
@@ -18,12 +18,12 @@ class Base {
 	}
 	
 	public function findById($id) {
-		$result = $this->runQuery("SELECT * from $this->table WHERE id = ?", array($id));
+		$result = $this->dbh->runQuery("SELECT * from $this->table WHERE id = ?", array($id));
 		if(count($result) > 0) return($result[0]);
 	}
 	
 	public function runQuery($query, $params = array()) {
-		$q = $this->prepare($query);
+		$q = $this->dbh->prepare($query);
 		$q->execute($params);
 		return $q->fetchAll();
 	}

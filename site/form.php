@@ -5,7 +5,7 @@
     <input type="text" maxlength="400" name="quote" />
   </div>
   <div>
-    <label for="quote">Your name (or nickname):</label>
+    <label for="who">Your name (or nickname):</label>
     <input type="text" maxlength="100" name="who" />
   </div>
   <div>

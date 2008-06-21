@@ -6,7 +6,6 @@ class User extends Base {
 	}
 
 	public function migrate() {
-		die("here");
 		$userSql = <<<SQL
 		CREATE TABLE IF NOT EXISTS users (
 			"id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,

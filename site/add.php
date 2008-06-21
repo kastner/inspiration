@@ -5,9 +5,9 @@ if ($_POST["quote"] && $_POST["who"]) {
   
   $quote = new Quote;
   
-  $quote->newQuote(strip_tags($_POST["who"]), strip_tags($_POST["quote"]));
+  $quote->newQuote($_POST["who"], strip_tags($_POST["quote"]));
   
-  $message = "Your quote has been added, thank you.";
+  $message = "Your quote has been added, thank you. " . $_POST["who"];
 }
 ?>
 <?php

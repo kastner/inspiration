@@ -4,18 +4,11 @@ require_once("../models/User.php");
 require_once("../models/Quote.php");
 
 // $user = new User;
-$user = new Base();
-$quote = new Quote();
 $user = new User();
+$quote = new Quote();;
 
-var_dump($quote);
-die();
 $user->migrate();
-// $quote->migrate();
-print system("sqlite3 inspire.sqlite3 '.schema'");
-system("rm inspire.sqlite3");
-print "\n";
-die();
+$quote->migrate();
 
 if(isset($_SERVER["SERVER_NAME"])) {
 	die("This script must be run from the command line.");

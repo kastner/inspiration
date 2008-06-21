@@ -6,10 +6,6 @@ $quote = new Quote;
 foreach($quote->findAll() as $q) $quotes[] = array("q" => $q["quote"], "w" => $q["who"]);
 
 $quotes_json = json_encode($quotes);
-echo rand(0, count($quotes) - 1);
-var_dump($quotes[0]);
-echo "------------------------<br/>";
-var_dump($quotes);
 $random_quote = $quotes[rand(0, count($quotes) - 1)];
 
 ?>
