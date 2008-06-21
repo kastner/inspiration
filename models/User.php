@@ -1,5 +1,5 @@
 <?php
-class User extends Database {
+class User extends Base {
 	public function __construct() {
 		$this->table = "users";
 		parent::__construct();

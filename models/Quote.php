@@ -1,5 +1,5 @@
 <?php
-class Quote extends Database {
+class Quote extends Base {
 	public function __construct() {
 		$this->table = "quotes";
 		parent::__construct();

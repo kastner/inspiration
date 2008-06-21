@@ -7,7 +7,10 @@ $user = new User;
 $quote = new Quote;
 
 $user->migrate();
-$quote->migrate();
+// $quote->migrate();
+print system("sqlite3 inspire.sqlite3 '.schema'");
+print "\n";
+die();
 
 if(isset($_SERVER["SERVER_NAME"])) {
 	die("This script must be run from the command line.");

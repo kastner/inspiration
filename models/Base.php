@@ -1,13 +1,11 @@
 <?php
-class Database {
-	// db handle
-	protected $dbh;
-	
+class Base extends PDO {
+
 	// table
 	protected $table;
 	
 	public function __construct() {
-		$this->dbh = new PDO('sqlite:../db/inspire.sqlite3', '', '', array(
+		parent::__construct('sqlite:../db/inspire.sqlite3', '', '', array(
 		    PDO::ATTR_PERSISTENT => true,
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
 		));
@@ -23,7 +21,7 @@ class Database {
 	}
 	
 	public function runQuery($query, $params = array()) {
-		$q = $this->dbh->prepare($query);
+		$q = $this->prepare($query);
 		$q->execute($params);
 		return $q->fetchAll();
 	}
