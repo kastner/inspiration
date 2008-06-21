@@ -3,12 +3,17 @@ require_once("../models/Base.php");
 require_once("../models/User.php");
 require_once("../models/Quote.php");
 
-$user = new User;
-$quote = new Quote;
+// $user = new User;
+$user = new Base();
+$quote = new Quote();
+$user = new User();
 
+var_dump($quote);
+die();
 $user->migrate();
 // $quote->migrate();
 print system("sqlite3 inspire.sqlite3 '.schema'");
+system("rm inspire.sqlite3");
 print "\n";
 die();
 

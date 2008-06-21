@@ -1,11 +1,13 @@
 <?php
-class Base extends PDO {
-
+class Base {
+	// db handle
+	private $dbh;
+	
 	// table
 	protected $table;
 	
 	public function __construct() {
-		parent::__construct('sqlite:../db/inspire.sqlite3', '', '', array(
+		$dbh = new PDO('sqlite:../db/inspire.sqlite3', '', '', array(
 		    PDO::ATTR_PERSISTENT => true,
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
 		));
