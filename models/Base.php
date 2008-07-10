@@ -7,7 +7,8 @@ class Base {
 	protected $table;
 	
 	public function __construct() {
-		$this->dbh = new PDO('sqlite:../db/inspire.sqlite3', '', '', array(
+    // $this->dbh = new PDO('sqlite:../db/inspire.sqlite3', '', '', array(
+		$this->dbh = new PDO('mysql://localhost/inspire', 'root', '', array(
 			PDO::ATTR_PERSISTENT => true,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
 		));
